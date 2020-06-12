@@ -55,3 +55,49 @@ create table historico
 );
 
 select * from historico, laboratorio_sala, ordem_servico, pessoa, tipo_servico	;
+
+INSERT INTO historico(ose_id, pes_id, his_data, his_status)
+VALUES ('5', '1', CURRENT_TIMESTAMP, 'ativo');
+
+INSERT INTO tipo_servico(tps_descricao)
+VALUES ('montagem de panelas');
+
+INSERT INTO pessoa(
+	pes_nome, 
+	pes_cpf_cnpj, 
+	pes_telefone, 
+	pes_email, 
+	pes_funcao, 
+	pes_login, 
+	pes_senha, 
+	pes_perfil)
+VALUES ( 
+	'Rafael3', 
+	'12345678901', 
+	'39123456780', 
+	'rafael2@email.com', 
+	'cliente', 
+	'rafael', 
+	'123456', 
+	'solteiro'); 
+
+INSERT INTO ordem_servico(
+	tps_id, 
+	lab_id,
+	pes_id_func,
+	pes_id_cli,
+	ose_data_emissao,
+	ose_data_fechamento,
+	ose_status,
+	ose_descricao,
+	ose_local)
+VALUES ( 
+	'1', 
+	'1', 
+	'1', 
+	'1', 
+	CURRENT_TIMESTAMP, 
+	CURRENT_TIMESTAMP, 
+	'ativo', 
+	'estudante',
+	'baixadao'); 
