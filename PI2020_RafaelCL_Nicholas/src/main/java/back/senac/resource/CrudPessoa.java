@@ -53,7 +53,8 @@ public class CrudPessoa {
 	}
 
 	@PutMapping("/{id}")
-	public ResponseEntity<Pessoa> atualizar(@PathVariable Long id, @Valid @RequestBody Pessoa pessoa) {
+	public ResponseEntity<Pessoa> atualizar(@PathVariable Long id, 
+			@Valid @RequestBody Pessoa pessoa) {
 
 		Optional<Pessoa> pessoaBanco = apiPessoa.findById(id);
 		BeanUtils.copyProperties(pessoa, pessoaBanco.get(), "id");
