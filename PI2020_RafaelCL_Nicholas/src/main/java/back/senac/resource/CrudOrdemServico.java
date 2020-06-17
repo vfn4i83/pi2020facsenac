@@ -26,29 +26,16 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import back.senac.model.OrdemServico;
 import back.senac.repositorio.ApiOrdemServico;
 
-
-/* 
- * TODO implementar CRUD separados para Cliente e Admin! UNICA SOLUCAO
- * Possivle solucao, adpter para separar cliente e admin, back ou front, estudar assunto
- *  
-*/
-
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/ordem_servico")
 public class CrudOrdemServico {
-	
-	/*
-	 * TODO considerar Switch
-	 * possivel escolha de arquitetura validar para escolher tipo de acesso 
-	 */
-	
+		
 	@Autowired
 	private ApiOrdemServico apiOS;
 	
 	@GetMapping
 	public List<OrdemServico> ordemServico(){
-//	TODO descobrir o modelo/Arquitetura do que chamar aqui: cuca vazia de tudo!
 		return apiOS.findAll();
 	}
 	
@@ -60,7 +47,6 @@ public class CrudOrdemServico {
 		
 		URI webUrl = ServletUriComponentsBuilder.fromCurrentRequestUri().path("/{id}")
 				.buildAndExpand(salvar.getId()).toUri(); 
-		//TODO implementar os getters e setters
 		
 		return ResponseEntity.created(webUrl).body(salvar);
 	}
@@ -70,9 +56,7 @@ public class CrudOrdemServico {
 			@Valid @RequestBody OrdemServico ordemServico) {
 
 		Optional<OrdemServico> ordemServBanco = apiOS.findById(id);
-		BeanUtils.copyProperties(ordemServico, 
-				ordemServBanco.get(), 
-				"id");
+		BeanUtils.copyProperties(ordemServico, ordemServBanco.get(), "id");
 		apiOS.save(ordemServBanco.get());
 
 		return ResponseEntity.ok(ordemServico);

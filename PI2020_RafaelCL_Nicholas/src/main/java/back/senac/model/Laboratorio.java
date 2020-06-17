@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -37,6 +38,18 @@ public class Laboratorio {
 		this.nome = nome;
 	}
 	
-	
+	/*
+	 * TESTES
+	 */
+//	@ManyToOne
+//	private OrdemServico os;
+//
+//	public OrdemServico getOs() {
+//		return os;
+//	}
+//
+//	public void setOs(OrdemServico os) {
+//		this.os = os;
+//	}
 
 }
