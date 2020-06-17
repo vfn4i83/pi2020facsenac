@@ -1,0 +1,17 @@
+v .3
+-Melhoria na integracao back-front-end
+
+v .2
+- Integracao parcial com front end.
+- MUITO PARCIAL >> MOCKUP <<
+- Agradeço a ajuda de meus colegas por insistirem 
+  em completar esta parte ainda em tempo da entrega.
+
+v .1
+- Refatoração do back-end para maior acesso ao BD;
+- Front-end legado descartado, implementação de novo com acesso aos novos recursos;
+
+- Crud 100% funcional; algumas tabelas requerem daods de outras tabelas e elas 
+	precisam ser tratadas para teste.
+	
+	
