@@ -101,3 +101,10 @@ VALUES (
 	'ativo', 
 	'estudante',
 	'baixadao'); 
+	
+	select * from historico;
+select * from ordem_servico as os
+	JOIN pessoa as ps on os.tps_id = ps.pes_id 
+select * from tipo_servico;
+select * from laboratorio_sala;
+	
