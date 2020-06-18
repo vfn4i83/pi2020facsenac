@@ -1,3 +1,9 @@
+v .4
+-Finalizacao das funcionalidades basicas
+-integracao completa entre back e front
+-Relacionamentos, Back-end, consertados
+-Busca de dados, funciona agora! (Front-end)
+
 v .3
 -Melhoria na integracao back-front-end
 
