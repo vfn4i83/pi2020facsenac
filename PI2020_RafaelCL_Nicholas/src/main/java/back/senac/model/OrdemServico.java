@@ -1,7 +1,7 @@
 package back.senac.model;
 
-import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
@@ -97,28 +98,42 @@ public class OrdemServico {
 //	** TESTE ****************
 //	** TESTE ****************
 		
-//	@Column(name = "pes_id_cli")
+	@ManyToOne
 	@JoinColumn(name = "pes_id_cli")
-	private Long pes_id_cli;
+	private Pessoa cliente;
 	
-//	@Column(name = "pes_id_func")
+	@ManyToOne
 	@JoinColumn(name = "pes_id_func")
-	private Long pes_id_func;
+	private Pessoa funcionario;
 
-//	@OneToMany
-//	@JoinColumn(name = "lab_id")
-	@Column(name = "lab_id")
-	private Long os_lab_id;
+	@OneToOne
+	@JoinColumn(name = "lab_id")
+	private Laboratorio lab;
 
-//	@OneToMany
-//	@JoinColumn(name = "tps_id")
-	@Column(name = "tps_id")
-	private Long os_tps_id;
+	@OneToOne
+	@JoinColumn(name = "tps_id")
+	private TipoServico tps;
 
 //	***********************
-
+		
 	public Long getId() {
 		return id;
+	}
+
+	public TipoServico getTps() {
+		return tps;
+	}
+
+	public void setTps(TipoServico tps) {
+		this.tps = tps;
+	}
+
+	public Laboratorio getLab() {
+		return lab;
+	}
+
+	public void setLab(Laboratorio lab) {
+		this.lab = lab;
 	}
 
 	public void setId(Long id) {
@@ -165,39 +180,25 @@ public class OrdemServico {
 		this.data_fechamento = data_fechamento;
 	}
 
-	public Long getPes_id_cli() {
-		return pes_id_cli;
-	}
-
-	public void setPes_id_cli(Long pes_id_cli) {
-		this.pes_id_cli = pes_id_cli;
-	}
-
-	public Long getPes_id_func() {
-		return pes_id_func;
-	}
-
-	public void setPes_id_func(Long pes_id_func) {
-		this.pes_id_func = pes_id_func;
-	}
-
-	public Long getOs_lab_id() {
-		return os_lab_id;
-	}
-
-	public void setOs_lab_id(Long os_lab_id) {
-		this.os_lab_id = os_lab_id;
-	}
-
-	public Long getOs_tps_id() {
-		return os_tps_id;
-	}
-
-	public void setOs_tps_id(Long os_tps_id) {
-		this.os_tps_id = os_tps_id;
-	}
-
 	public OrdemServico() {
 	}
+
+	public Pessoa getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Pessoa cliente) {
+		this.cliente = cliente;
+	}
+
+	public Pessoa getFuncionario() {
+		return funcionario;
+	}
+
+	public void setFuncionario(Pessoa funcionario) {
+		this.funcionario = funcionario;
+	}
+	
+	
 
 }
