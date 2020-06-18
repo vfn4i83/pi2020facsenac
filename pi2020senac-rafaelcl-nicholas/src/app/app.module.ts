@@ -18,6 +18,9 @@ import { PessoaService } from './services/pessoa.service';
 import { LaboratorioService } from './services/laboratorio.service';
 import { TipoServicoService } from './services/tiposervico.service';
 
+// PrimeNG
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,12 +35,13 @@ import { TipoServicoService } from './services/tiposervico.service';
     HttpClientModule,
     FormsModule,
     AppRoutingModule
-  ],
+    ],
   providers: [TipoServicoService, 
     LaboratorioService, 
     PessoaService, 
     OrdemServicoService, 
-    HistoricoService],
+    HistoricoService
+    ],
   bootstrap: [AppComponent]
 })
 
